@@ -7,7 +7,8 @@
 <title>Home</title>
 </head>
 <body>
-<a href=""><button>Insert Data</button></a>
+<a href="insert"><button>Insert Data</button></a>
 <a href=""><button>Fetch All Data</button></a>
+<a href=""><button>Fetch Data By Name</button></a>
 </body>
 </html>
