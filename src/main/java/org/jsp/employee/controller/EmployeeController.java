@@ -1,5 +1,7 @@
 package org.jsp.employee.controller;
 
+import java.io.IOException;
+
 import org.jsp.employee.dto.Employee;
 import org.jsp.employee.service.EmployeeService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,7 +29,13 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/insert")
-	public String saveData(Employee employee, @RequestParam String date, @RequestParam MultipartFile pic,ModelMap map) {
+	public String saveData(Employee employee, @RequestParam String date, @RequestParam MultipartFile pic,ModelMap map) throws IOException {
 		return employeeService.save(employee,date,pic,map);
+	}
+	
+	@GetMapping("/fetch")
+	public String fetchAll(ModelMap map)
+	{
+		return employeeService.fetchAll(map);
 	}
 }

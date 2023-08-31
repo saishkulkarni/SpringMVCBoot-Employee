@@ -7,8 +7,10 @@
 <title>Home</title>
 </head>
 <body>
+<h1 style="color:green">${pos}</h1>
+<h1 style="color:red">${neg}</h1>
 <a href="insert"><button>Insert Data</button></a>
-<a href=""><button>Fetch All Data</button></a>
+<a href="fetch"><button>Fetch All Data</button></a>
 <a href=""><button>Fetch Data By Name</button></a>
 </body>
 </html>

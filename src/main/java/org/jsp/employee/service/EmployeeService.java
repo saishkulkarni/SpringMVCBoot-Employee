@@ -2,6 +2,7 @@ package org.jsp.employee.service;
 
 import java.io.IOException;
 import java.time.LocalDate;
+import java.util.List;
 
 import org.jsp.employee.dao.EmployeeDao;
 import org.jsp.employee.dto.Employee;
@@ -28,6 +29,19 @@ public class EmployeeService {
 		
 		map.put("pos", "Data Added Success");
 		return "Home";
+	}
+
+	public String fetchAll(ModelMap map) {
+		List<Employee> list=employeeDao.fetchAll();
+		if(list.isEmpty())
+		{
+			map.put("neg", "Data Not Found");
+			return "Home";
+		}
+		else {
+			map.put("list", list);
+			return "ViewEmployee";
+		}
 	}
 
 }
