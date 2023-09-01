@@ -21,4 +21,8 @@ public class EmployeeDao {
 		return employeeRepository.findAll();
 	}
 
+	public List<Employee> fetchByName(String name) {
+		return employeeRepository.findByName(name);
+	}
+
 }

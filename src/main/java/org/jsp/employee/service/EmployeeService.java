@@ -44,4 +44,17 @@ public class EmployeeService {
 		}
 	}
 
+	public String fetchByName(String name, ModelMap map) {
+		List<Employee> list=employeeDao.fetchByName(name);
+		if(list.isEmpty())
+		{
+			map.put("neg", "Data Not Found");
+			return "Home";
+		}
+		else {
+			map.put("list", list);
+			return "ViewEmployee";
+		}
+	}
+
 }

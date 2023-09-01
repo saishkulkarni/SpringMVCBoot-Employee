@@ -29,13 +29,25 @@ public class EmployeeController {
 	}
 
 	@PostMapping("/insert")
-	public String saveData(Employee employee, @RequestParam String date, @RequestParam MultipartFile pic,ModelMap map) throws IOException {
-		return employeeService.save(employee,date,pic,map);
+	public String saveData(Employee employee, @RequestParam String date, @RequestParam MultipartFile pic, ModelMap map)
+			throws IOException {
+		return employeeService.save(employee, date, pic, map);
+	}
+
+	@GetMapping("/fetch")
+	public String fetchAll(ModelMap map) {
+		return employeeService.fetchAll(map);
+	}
+
+	@GetMapping("/fetchbyname")
+	public String loadName()
+	{
+		return "FetchByName";
 	}
 	
-	@GetMapping("/fetch")
-	public String fetchAll(ModelMap map)
+	@PostMapping("/fetchbyname")
+	public String fetchName(@RequestParam String name,ModelMap map)
 	{
-		return employeeService.fetchAll(map);
+		return employeeService.fetchByName(name,map);
 	}
 }
