@@ -4,11 +4,11 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Search by Name</title>
+<title>Search by Mobile</title>
 </head>
 <body>
-	<form action="fetchbyname" method="post">
-		Enter Name:<input type="text" name="name">
+	<form action="fetchbymobile" method="post">
+	Enter Mobile:	<input type="text" name="mobile">
 		<button>Search</button>
 	</form>
 </body>

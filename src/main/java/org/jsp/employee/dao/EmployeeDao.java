@@ -12,7 +12,7 @@ public class EmployeeDao {
 
 	@Autowired
 	EmployeeRepository employeeRepository;
-	
+
 	public void save(Employee employee) {
 		employeeRepository.save(employee);
 	}
@@ -23,6 +23,26 @@ public class EmployeeDao {
 
 	public List<Employee> fetchByName(String name) {
 		return employeeRepository.findByName(name);
+	}
+
+	public List<Employee> fetchByEmail(String email) {
+		return employeeRepository.findByEmail(email);
+	}
+
+	public List<Employee> fetchByMobile(long mobile) {
+		return employeeRepository.findByMobile(mobile);
+	}
+
+	public List<Employee> fetchByCountry(String country) {
+		return employeeRepository.findByCountry(country);
+	}
+
+	public List<Employee> fetchByDevInd() {
+		return employeeRepository.findByRoleAndCountry("developer","India");
+	}
+
+	public List<Employee> fetchCtc1020() {
+		return employeeRepository.findByCtcBetween(10,20);
 	}
 
 }

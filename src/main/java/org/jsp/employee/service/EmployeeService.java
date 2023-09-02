@@ -1,4 +1,4 @@
-package org.jsp.employee.service;
+  package org.jsp.employee.service;
 
 import java.io.IOException;
 import java.time.LocalDate;
@@ -46,6 +46,71 @@ public class EmployeeService {
 
 	public String fetchByName(String name, ModelMap map) {
 		List<Employee> list=employeeDao.fetchByName(name);
+		if(list.isEmpty())
+		{
+			map.put("neg", "Data Not Found");
+			return "Home";
+		}
+		else {
+			map.put("list", list);
+			return "ViewEmployee";
+		}
+	}
+
+	public String fetchByEmail(String email, ModelMap map) {
+		List<Employee> list=employeeDao.fetchByEmail(email);
+		if(list.isEmpty())
+		{
+			map.put("neg", "Data Not Found");
+			return "Home";
+		}
+		else {
+			map.put("list", list);
+			return "ViewEmployee";
+		}
+	}
+
+	public String fetchByMobile(long mobile, ModelMap map) {
+		List<Employee> list=employeeDao.fetchByMobile(mobile);
+		if(list.isEmpty())
+		{
+			map.put("neg", "Data Not Found");
+			return "Home";
+		}
+		else {
+			map.put("list", list);
+			return "ViewEmployee";
+		}
+	}
+
+	public String fetchByCountry(String country, ModelMap map) {
+		List<Employee> list=employeeDao.fetchByCountry(country);
+		if(list.isEmpty())
+		{
+			map.put("neg", "Data Not Found");
+			return "Home";
+		}
+		else {
+			map.put("list", list);
+			return "ViewEmployee";
+		}
+	}
+
+	public String fetchByDevInd(ModelMap map) {
+		List<Employee> list=employeeDao.fetchByDevInd();
+		if(list.isEmpty())
+		{
+			map.put("neg", "Data Not Found");
+			return "Home";
+		}
+		else {
+			map.put("list", list);
+			return "ViewEmployee";
+		}
+	}
+
+	public String fetchCtc1020(ModelMap map) {
+		List<Employee> list=employeeDao.fetchCtc1020();
 		if(list.isEmpty())
 		{
 			map.put("neg", "Data Not Found");

@@ -40,14 +40,53 @@ public class EmployeeController {
 	}
 
 	@GetMapping("/fetchbyname")
-	public String loadName()
-	{
+	public String loadName() {
 		return "FetchByName";
 	}
-	
+
 	@PostMapping("/fetchbyname")
-	public String fetchName(@RequestParam String name,ModelMap map)
-	{
-		return employeeService.fetchByName(name,map);
+	public String fetchName(@RequestParam String name, ModelMap map) {
+		return employeeService.fetchByName(name, map);
 	}
+
+	@GetMapping("/fetchbyemail")
+	public String loadEmail() {
+		return "FetchByEmail";
+	}
+
+	@PostMapping("/fetchbyemail")
+	public String fetchEmail(@RequestParam String email, ModelMap map) {
+		return employeeService.fetchByEmail(email, map);
+	}
+
+	@GetMapping("/fetchbymobile")
+	public String loadMobile() {
+		return "FetchByMobile";
+	}
+
+	@PostMapping("/fetchbymobile")
+	public String fetchMobile(@RequestParam long mobile, ModelMap map) {
+		return employeeService.fetchByMobile(mobile, map);
+	}
+
+	@GetMapping("/fetchbycountry")
+	public String loadCountry() {
+		return "FetchByCountry";
+	}
+
+	@PostMapping("/fetchbycountry")
+	public String fetchCountry(@RequestParam String country, ModelMap map) {
+		return employeeService.fetchByCountry(country, map);
+	}
+
+	@GetMapping("/fetchdevind")
+	public String fetchDevInd(ModelMap map) {
+		return employeeService.fetchByDevInd(map);
+	}
+	
+	@GetMapping("/fetchctc1020")
+	public String fetchCtc1020(ModelMap map) {
+		return employeeService.fetchCtc1020(map);
+	}
+	
 }
